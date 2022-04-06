@@ -1,6 +1,39 @@
 import pygame
+import random
+import time
 
 pygame.init()
+
+sleep_time = 0.5
+
+rect_height = []
+
+def get_rect_height():
+    rect_height = random.shuffle([i for i in range(1, 500)])
+
+def draw_screen():
+
+    X = 0
+    width = 10
+
+    for i in rect_height:
+        pygame.draw.rect(win, WHITE, (X, 0, width, i), border_radius = 5)
+        X += 10
+
+    pygame.display.update()
+
+def bubble_sort():
+    swap = True
+    while swap:
+        swap = False
+        for i in range(len(rect_height) - 1):
+            if rect_height[i] > rect_height[i + 1]:
+                temp = rect_height[i]
+                rect_height[i] = rect_height[i + 1]
+                rect_height[i + 1] = temp
+                swap = True
+                time.sleep(sleep_time)
+                draw_screen()                
 
 # Clock
 clock = pygame.time.Clock()
@@ -9,6 +42,7 @@ clock = pygame.time.Clock()
 
 BLACK = (0, 0, 0)
 WHITE = (255, 255, 255)
+GREEN = (0, 255, 0)
 
 # Window set up
 win_width = 1000
@@ -22,18 +56,15 @@ pygame.display.set_caption("Algorithm Visualiser")
 state = True
 
 while state:
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             state = False
-    
     win.fill(BLACK)
-
-    X = 100; Y = 120; width = 10; height = 30
-
-    pygame.draw.rect(win, WHITE, (X, Y, width, height), border_radius = 5)
-
-    pygame.display.update()
+    get_rect_height()
+    draw_screen()
     clock.tick(30)
+
 
 # Pygame quit
 pygame.quit()
