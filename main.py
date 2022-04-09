@@ -1,7 +1,7 @@
 import pygame
 import random
 import time
-
+# This is the initialisation of the pygame
 pygame.init()
 
 sleep_time = 0.5
@@ -22,6 +22,7 @@ def draw_screen():
 
     pygame.display.update()
 
+# Sorting algorithms
 def bubble_sort():
     swap = True
     while swap:
