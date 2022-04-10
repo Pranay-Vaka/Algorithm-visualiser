@@ -17,7 +17,7 @@ def draw_screen():
     width = 10
 
     for i in rect_height:
-        pygame.draw.rect(win, WHITE, (X, 0, width, i), border_radius = 5)
+        pygame.draw.rect(win, WHITE, (400,400,50,25), border_radius = 5)
         X += 10
 
     pygame.display.update()
@@ -56,12 +56,14 @@ pygame.display.set_caption("Algorithm Visualiser")
 
 state = True
 
-while state:
+win.fill(BLACK)
 
+while state:
+    
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             state = False
-    win.fill(BLACK)
+    
     get_rect_height()
     draw_screen()
     clock.tick(30)
