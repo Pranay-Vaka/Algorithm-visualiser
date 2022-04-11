@@ -1,0 +1,37 @@
+import turtle
+import random
+import time
+
+screen = turtle.Screen()
+screen.screensize(1000, 500)
+
+sleep_time = 0.5
+rect_height = []
+turtle.speed(0)
+turtle.pensize(1)
+
+def draw_rectangles(index = -1):
+    
+    for i in range(1, len(rect_height) + 1):
+        if index != -1: 
+            if rect.color("white")
+    
+
+def get_rect_height():
+    rect_height = random.shuffle([i for i in range(1, 500)])
+
+
+# Sorting algorithms
+def bubble_sort():
+    swap = True
+
+    while swap:
+        swap = False
+        
+        for i in range(len(rect_height) - 1):
+            if rect_height[i] > rect_height[i + 1]:
+                temp = rect_height[i]
+                rect_height[i] = rect_height[i + 1]
+                rect_height[i + 1] = temp
+                swap = True
+                time.sleep(sleep_time)
