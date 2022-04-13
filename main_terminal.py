@@ -13,7 +13,7 @@ def draw_screen():
     os.system("clear")
     draw_string = "".join([(("-" * i) + "\n") for i in rect_height])
     print(draw_string)
-
+# Sorting algorithms
 def bubble_sort():
     draw_screen()
     swap = True
