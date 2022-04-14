@@ -2,17 +2,22 @@ import random
 import time
 import os
 
+# Global variables
 sleep_time = 0.03
 rect_height = [i for i in range(1, 40)]
 draw_string = ""
 
+
+# Generates the rectangles height
 def shuffle_rect_height():
     random.shuffle(rect_height)
 
+# Draws to the screen
 def draw_screen():
     os.system("clear")
     draw_string = "".join([(("-" * i) + "\n") for i in rect_height])
     print(draw_string)
+
 # Sorting algorithms
 def bubble_sort():
     draw_screen()
@@ -87,6 +92,7 @@ def merge_sort(arr):
             k += 1
             draw_screen()
 
+# Driver code
 def main():
     
     while True:
